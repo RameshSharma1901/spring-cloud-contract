@@ -1,0 +1,4 @@
+spring:
+  profiles: test
+
+endpoint: http://localhost:8092/api/endpoint1

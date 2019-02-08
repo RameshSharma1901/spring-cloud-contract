@@ -7,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -30,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         ids = {"com.toutjuste:sccpoc:0.0.1-SNAPSHOT:stubs:8092"
 }
 )
+@TestPropertySource(locations="classpath:application-default.yml")
 public class ControllerClassTest {
 
     @Autowired
@@ -38,8 +40,7 @@ public class ControllerClassTest {
     @Test
     public void getDetails() throws Exception {
 
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/endpoint1")
-                ;
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/endpoint1");
 
         this.mvc.perform(builder)
                 .andDo(print())
