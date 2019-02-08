@@ -1,0 +1,10 @@
+server:
+  port: 9081
+  servlet:
+    context-path: /ping
+
+
+connection-request-timeout: 0
+connect-timeout: 1000
+read-timeout: 1000
+
