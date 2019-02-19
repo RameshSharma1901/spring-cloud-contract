@@ -25,8 +25,7 @@ private String endpoint;
         headers.set("Content-Type", "application/json");
         HttpEntity entity = new HttpEntity(headers);
         try {
-//            responseEntity = new ResponseEntity(restTemplate.getForObject("http://localhost:8092/api",
-//                    TypicodePojo[].class), HttpStatus.OK);
+
             responseEntity=restTemplate.exchange(
                     endpoint, HttpMethod.GET, entity, String.class);
         } catch (Exception e) {

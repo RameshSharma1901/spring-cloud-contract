@@ -1,3 +1,5 @@
+spring:
+  profiles: local
 server:
   port: 9081
   servlet:
@@ -9,4 +11,10 @@ endpoint: https://jsonplaceholder.typicode.com/posts
 connection-request-timeout: 0
 connect-timeout: 1000
 read-timeout: 1000
+
+---
+
+spring:
+  profiles: test
+endpoint: http://localhost:8092/api/endpoint1
 
